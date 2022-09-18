@@ -1,0 +1,20 @@
+LINE :<h1> This is the header! </h1>
+	Tag Recognized: h1
+	Tag Recognized: /h1
+	tag <h1> OK
+LINE :<div>
+	Tag Recognized: div
+LINE :    <p>
+	Tag Recognized: p
+LINE :        Hello World
+LINE :    </p>
+	Tag Recognized: /p
+	tag <p> OK
+LINE :</div>
+	Tag Recognized: /div
+	tag <div> OK
+LINE :
+LINE :<h1>This is the header! </h1>
+	Tag Recognized: h1
+	Tag Recognized: /h1
+	tag <h1> OK
