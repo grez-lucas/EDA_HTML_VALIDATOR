@@ -91,7 +91,7 @@ int main(int nargs, char **vargs)
 	ofstream outFile;
 
 	inFile.open(file_name);
-	outFile.open("../output/" + file_name.substr(0, file_name.length() - 5) + ".log");
+	outFile.open("../html/" + file_name.substr(0, file_name.length() - 5) + ".log");
 
 	string buffer;
 
