@@ -1,0 +1,35 @@
+LINE 1:    <center>
+	Tag Recognized: center
+LINE 2:        <p>
+	Tag Recognized: p
+LINE 3:            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies sapien nec neque imperdiet,
+LINE 4:            ut convallis nibh rhoncus. Etiam arcu nulla, convallis non aliquet nec, gravida et tortor. Sed eget lorem
+LINE 5:            ut magna pharetra interdum. Morbi a iaculis orci, sed pretium orci. Ut congue arcu vitae nisi laoreet aliquet.
+LINE 6:            Sed nisi nisi, suscipit eget tellus a, viverra porta nulla. Nam mollis aliquet gravida. Etiam turpis dui,
+LINE 7:            finibus a gravida id, interdum iaculis velit. Etiam facilisis dolor hendrerit neque vestibulum, eget feugiat
+LINE 8:            massa pretium. Vestibulum laoreet, neque et ultrices congue, dolor massa fringilla tellus, et scelerisque
+LINE 9:            augue turpis ac ipsum. Duis in tincidunt velit. Curabitur ut diam nec nisi dictum auctor. 
+LINE 10:        </p>
+	Tag Recognized: /p
+	tag <p> OK
+LINE 11:    </center>
+	Tag Recognized: /center
+	tag <center> OK
+LINE 12:    <center>    
+	Tag Recognized: center
+LINE 13:        <p>
+	Tag Recognized: p
+LINE 14:            Etiam rhoncus euismod aliquam. Morbi non ligula sollicitudin, fringilla erat non, porttitor nisi. Ut at tempor
+LINE 15:            turpis. In pharetra laoreet nisi, eget aliquet mi. In maximus, tortor a scelerisque tristique, lorem nisi tempor
+LINE 16:            lectus, eu tristique mauris magna vitae mi. Donec sollicitudin dui vel massa vestibulum, sit amet ullamcorper
+LINE 17:            nunc dapibus. Quisque non lobortis dolor, nec pulvinar magna. Nullam commodo magna non tincidunt dictum. Donec
+LINE 18:            mauris nibh, molestie at finibus sit amet, placerat vel magna. 
+LINE 19:        </p>
+	Tag Recognized: /p
+	tag <p> OK
+LINE 20:    </center>
+	Tag Recognized: /center
+	tag <center> OK
+LINE 21:</body>
+	Tag Recognized: /body
+Error at line 21: No opening tag found for </body>

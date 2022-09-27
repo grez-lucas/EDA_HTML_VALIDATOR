@@ -1,0 +1,5 @@
+LINE 1:<h1><p> texto </h1></p>
+	Tag Recognized: h1
+	Tag Recognized: p
+	Tag Recognized: /h1
+Error at line 1: Expected </p> but found </h1>
