@@ -8,13 +8,15 @@
 using namespace eda;
 using namespace std;
 
-bool validateHTMLTags(ifstream &inFile, int *pos, ofstream &outFile)
+/// @brief 
+
+bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 {
+	int pos = 0;
 	bool error = false;
 	int i = 0, j;
 	string buffer, tag;
 	Stack stack;
-
 	while (getline(inFile, buffer))
 	{
 		i++;
@@ -53,7 +55,7 @@ bool validateHTMLTags(ifstream &inFile, int *pos, ofstream &outFile)
 						}
 						else
 						{
-							outFile << "\ttag <"<< tag.substr(1) <<"> OK"<< std::endl;
+							outFile << "\ttag <" << tag.substr(1) << "> OK" << std::endl;
 							stack.pop();
 						}
 					}
@@ -63,7 +65,7 @@ bool validateHTMLTags(ifstream &inFile, int *pos, ofstream &outFile)
 		}
 	}
 
-	if (!stack.isEmpty()) //check if the last tag was closed
+	if (!stack.isEmpty()) // check if the last tag was closed
 		error = true;
 
 	if (error)
@@ -76,12 +78,11 @@ bool validateHTMLTags(ifstream &inFile, int *pos, ofstream &outFile)
 
 int main(int nargs, char **vargs)
 {
-	if (nargs == 1){
+	if (nargs == 1)
+	{
 		std::cout << "Porfavor ingrese el nombre del archivo a validar como argumento" << std::endl;
 		return 1;
 	}
-
-	int pos = 0;
 
 	string file_name = vargs[1];
 
@@ -95,10 +96,9 @@ int main(int nargs, char **vargs)
 
 	string buffer;
 
-	bool error = validateHTMLTags(inFile, &pos, outFile);
+	bool error = validateHTMLTags(inFile, outFile);
 
-
-	std::cout<<"output-> "<< file_name.substr(0,file_name.length()-5) + ".log" <<std::endl;
+	std::cout << "output-> " << file_name.substr(0, file_name.length() - 5) + ".log" << std::endl;
 
 	inFile.close();
 	outFile.close();
