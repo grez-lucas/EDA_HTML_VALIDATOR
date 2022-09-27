@@ -8,7 +8,10 @@
 using namespace eda;
 using namespace std;
 
-/// @brief 
+/// @brief Validate HTML tags
+/// @param inFile Input file
+/// @param outFile Output file
+/// @return true if there is an error, false otherwise
 
 bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 {
@@ -22,7 +25,7 @@ bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 		i++;
 		j = 0;
 
-		outFile << "LINE :" << buffer << std::endl;
+		outFile << "LINE "<< i <<":" << buffer << std::endl;
 		while (!error && j < buffer.length())
 		{
 			if (buffer[j] == '<')
@@ -45,6 +48,8 @@ bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 					if (stack.isEmpty())
 					{
 						error = true;
+						outFile << "Error at line " << i << ": ";
+						outFile << "No opening tag found for <" << tag << ">" << std::endl;
 					}
 					else
 					{
@@ -52,6 +57,8 @@ bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 						if (node->getData() != tag.substr(1))
 						{
 							error = true;
+							outFile << "Error at line " << i << ": ";
+							outFile << "Expected </" << node->getData() << "> but found <" << tag << ">" << std::endl;
 						}
 						else
 						{
@@ -65,12 +72,13 @@ bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 		}
 	}
 
-	if (!stack.isEmpty()) // check if the last tag was closed
-		error = true;
 
 	if (error)
 	{
 		std::cout << "Error at line: " << i << std::endl;
+	}
+	else{
+		std::cout << "No errors found" << std::endl;
 	}
 
 	return error;
@@ -93,8 +101,6 @@ int main(int nargs, char **vargs)
 
 	inFile.open(file_name);
 	outFile.open("../html/" + file_name.substr(0, file_name.length() - 5) + ".log");
-
-	string buffer;
 
 	bool error = validateHTMLTags(inFile, outFile);
 
