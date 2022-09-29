@@ -20,7 +20,7 @@ bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 	int i = 0, j;
 	string buffer, tag;
 	Stack stack;
-	while (getline(inFile, buffer))
+	while (getline(inFile, buffer) && !error)
 	{
 		i++;
 		j = 0;
@@ -78,6 +78,7 @@ bool validateHTMLTags(ifstream &inFile, ofstream &outFile)
 		std::cout << "Error at line: " << i << std::endl;
 	}
 	else{
+		outFile << "0 errors found" << std::endl;
 		std::cout << "No errors found" << std::endl;
 	}
 
